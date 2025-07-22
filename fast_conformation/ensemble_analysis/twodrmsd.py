@@ -383,6 +383,8 @@ class TwodRMSD:
                 if not n_clusters:
                     unique_df = df[df['trial'] == trial]
                     n_clusters_trial = len(unique_df['mode_label']) + 1
+                else:
+                    n_clusters_trial = n_clusters
                 pbar.set_description(f'Running 2D RMSD analysis for {trial}')
                 self.input_dict['trial'] = trial
                 self.input_dict['max_seq'] = self.prediction_dicts[trial]['max_seq']
